@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoàng Nam Hub | Game & Social Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Quicksand:wght@400;700&display=swap');
+        
+        body { background: #020617; color: #f8fafc; font-family: 'Quicksand', sans-serif; overflow-x: hidden; }
+        
+        /* Hiệu ứng RGB cho Admin */
+        .admin-rgb {
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(90deg, #ff0000, #00ff00, #00ffff, #ff00ff, #ff0000);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rgb-move 5s linear infinite;
+            font-weight: 800;
+            text-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+        }
+        @keyframes rgb-move { 0% { background-position: 0%; } 100% { background-position: 400%; } }
+
+        .glass { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        
+        /* Hiệu ứng nền */
+        .bg-glow {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 500px; height: 500px; background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+            z-index: -1; pointer-events: none;
+        }
+
+        .btn-hover:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(6, 182, 212, 0.3); }
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 1000; align-items: center; justify-content: center; }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <nav class="glass sticky top-0 z-50 px-6 py-4 flex justify-between items-center border-b border-cyan-500/30">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-cyan-600 flex items-center justify-center animate-bounce">
+                <i class="fas fa-crown text-white"></i>
+            </div>
+            <span class="admin-rgb text-xl tracking-tighter uppercase">Admin Lê Hoàng Nam</span>
+        </div>
+        
+        <div class="hidden md:flex items-center space-x-4 font-bold">
+            <a href="https://discord.gg/PpzMWvcpa" target="_blank" class="text-[#5865F2] hover:scale-110 transition"><i class="fab fa-discord text-2xl"></i></a>
+            <button onclick="openModal('auth-modal')" class="bg-white text-black px-6 py-2 rounded-full text-sm btn-hover transition">ĐĂNG NHẬP</button>
+        </div>
+    </nav>
+
+    <div class="bg-cyan-600/10 border-b border-cyan-900 py-1 overflow-hidden">
+        <marquee class="text-xs text-cyan-400 font-bold uppercase tracking-widest">
+            Hệ thống đang hoạt động ổn định - Nạp thẻ tự động 24/7 - Mod Skin Liên Quân Free Fire OB44 mới nhất đã cập nhật!
+        </marquee>
+    </div>
+
+    <main class="container mx-auto px-4 py-16 text-center">
+        <h1 class="text-5xl md:text-7xl font-black mb-6 uppercase">Hoàng Nam <span class="text-cyan-500">Service</span></h1>
+        <p class="text-gray-400 max-w-2xl mx-auto mb-10 text-lg">Cổng dịch vụ mạng xã hội và công cụ hỗ trợ game chuyên nghiệp số 1 Việt Nam.</p>
+        
+        <div class="flex flex-wrap justify-center gap-6">
+            <div class="glass p-8 rounded-[2.5rem] w-full max-w-sm border-t-4 border-cyan-500 btn-hover transition duration-500">
+                <div class="bg-cyan-500/20 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-layer-group text-3xl text-cyan-400"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">HỆ THỐNG BUFF</h3>
+                <p class="text-gray-400 text-sm mb-8">Buff Follow TikTok, Facebook, Instagram. Lên đơn nhanh chóng, bảo hành vĩnh viễn.</p>
+                <a href="https://www.f1684.ceo/?id=561390556" target="_blank" class="block w-full py-4 bg-cyan-600 rounded-2xl font-bold hover:bg-cyan-500 transition">TRUY CẬP HỆ THỐNG</a>
+            </div>
+
+            <div class="glass p-8 rounded-[2.5rem] w-full max-w-sm border-t-4 border-orange-500 btn-hover transition duration-500">
+                <div class="bg-orange-500/20 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-download text-3xl text-orange-400"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">TẢI TOOL MOD</h3>
+                <p class="text-gray-400 text-sm mb-8">Mod Skin FF, Liên Quân, PUBG. Chống khóa acc, cập nhật hàng ngày bản mới nhất.</p>
+                <a href="https://www.f1684.ceo/?id=561390556" target="_blank" class="block w-full py-4 bg-orange-600 rounded-2xl font-bold hover:bg-orange-500 transition">TẢI TOOL NGAY</a>
+            </div>
+        </div>
+
+        <div class="mt-16">
+            <a href="https://discord.gg/PpzMWvcpa" target="_blank" class="inline-flex items-center gap-4 bg-[#5865F2] px-10 py-4 rounded-full font-bold text-xl btn-hover transition">
+                <i class="fab fa-discord"></i> THAM GIA CỘNG ĐỒNG DISCORD
+            </a>
+        </div>
+    </main>
+
+    <div id="auth-modal" class="modal">
+        <div class="glass p-8 rounded-3xl w-full max-w-md mx-4 relative">
+            <button onclick="closeModal('auth-modal')" class="absolute top-4 right-4 text-gray-500 hover:text-white"><i class="fas fa-times text-xl"></i></button>
+            <h2 class="text-2xl font-bold mb-6 text-center text-cyan-400 uppercase tracking-widest">Thành Viên</h2>
+            <div id="login-form" class="space-y-4">
+                <input type="text" id="user" placeholder="Tên đăng nhập" class="w-full bg-slate-900/50 border border-slate-700 p-4 rounded-xl outline-none focus:border-cyan-500 transition">
+                <input type="password" id="pass" placeholder="Mật khẩu" class="w-full bg-slate-900/50 border border-slate-700 p-4 rounded-xl outline-none focus:border-cyan-500 transition">
+                <button onclick="handleLogin()" id="login-btn" class="w-full bg-cyan-600 py-4 rounded-xl font-bold hover:bg-cyan-500 transition">ĐĂNG NHẬP NGAY</button>
+                <div class="text-center text-sm text-gray-500 mt-4">
+                    Chưa có tài khoản? <a href="#" class="text-cyan-400 underline">Đăng ký tại đây</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-10 text-gray-600 text-sm border-t border-white/5">
+        <p>Bản quyền thuộc về <span class="font-bold text-gray-400 uppercase">Lê Hoàng Nam</span></p>
+    </footer>
+
+    <script>
+        function openModal(id) { document.getElementById(id).style.display = "flex"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+
+        function handleLogin() {
+            const btn = document.getElementById('login-btn');
+            const user = document.getElementById('user').value;
+            
+            if(!user) { alert('Vui lòng nhập tài khoản!'); return; }
+
+            btn.innerHTML = '<i class="fas fa-spinner animate-spin"></i> Đang xác minh...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                alert('Đăng nhập thành công! Chào mừng Admin ' + user);
+                window.location.href = "https://www.f1684.ceo/?id=561390556";
+            }, 1500);
+        }
+
+        // Đóng modal khi click ra ngoài
+        window.onclick = function(e) {
+            if (e.target.className === 'modal') closeModal('auth-modal');
+        }
+    </script>
+</body>
+</html>
